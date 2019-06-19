@@ -25,7 +25,7 @@ class Menu extends Component {
         this.setState({
             currentElement: parseInt(event.target.value),
             funcName: ''
-        })
+        }) 
     }
 
     onAddElement = () => {

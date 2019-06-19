@@ -4,14 +4,16 @@ class Map extends Component {
     constructor(props){
         super(props);
         this.state = {
-            numberToBeAdded : 0
+            numberToBeAdded : 0,
+            funcName : this.props.name,
+            array : this.props.array
         }
     }
     
     mapFunction = () => {
-        return this.props.array.map((arr,index) =>{
+        return this.state.array.map((arr,index) =>{
             return(
-                <ul>
+                <ul key={index}>
                     {arr+parseInt(this.state.numberToBeAdded)}
                 </ul>
             )
@@ -19,7 +21,7 @@ class Map extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState){
-        console.log(nextProps);
+        return {funcName: nextProps.name, array: nextProps.array}
     }
 
     updateAddtionNumber = (event) => {
@@ -35,7 +37,7 @@ class Map extends Component {
                 <div>
                     <b>
                         <i>
-                            {'Function used : '+this.props.name}
+                            {'Function used : '+this.state.funcName}
                         </i>
                     </b>
                 </div>
