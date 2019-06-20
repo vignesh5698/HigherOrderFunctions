@@ -1,8 +1,8 @@
 find
-reduce
+reduce --->
 map ---> X
 each
-filter
+filter ----> X
 join
 isEmpty
 cloneDeep

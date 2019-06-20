@@ -21,8 +21,17 @@ class Filter extends Component {
     }
 
     filterFunction = () => {
-        return this.props.array.filter((value) => {
+        let filteredArray =  this.props.array.filter((value) => {
             return value%this.state.divider === 0
+        })
+        console.log(filteredArray);
+        
+        return filteredArray.map((element, index) => {
+            return(
+                <ul key={index}>
+                    {element}
+                </ul>
+            )
         })
     }
 

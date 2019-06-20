@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Map from './Map';
 import Filter from './Filter';
+import Reduce from './Reduce';
 
 class Menu extends Component {
     constructor(props){
@@ -19,6 +20,10 @@ class Menu extends Component {
 
     renderFilterFunction = () => {
         return <Filter array = {this.state.elements} name = {this.state.funcName}/>
+    }
+
+    renderReduceFunction = () => {
+        return <Reduce array = {this.state.elements} name = {this.state.funcName}/>
     }
 
     setInputField = (event) => {
@@ -76,6 +81,7 @@ class Menu extends Component {
                 </select>
                 {this.state.funcName === 'Map' ? this.renderMapFunction() : ''}
                 {this.state.funcName === 'Filter' ? this.renderFilterFunction() : ''}
+                {this.state.funcName === 'Reduce' ? this.renderReduceFunction() : ''}
             </div>
          );
     }
