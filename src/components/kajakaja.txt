@@ -1,7 +1,7 @@
 find
-reduce --->
+reduce ---> X
 map ---> X
-each
+each --->
 filter ----> X
 join
 isEmpty
