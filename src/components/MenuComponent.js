@@ -26,6 +26,10 @@ class Menu extends Component {
         return <Reduce array = {this.state.elements} name = {this.state.funcName}/>
     }
 
+    renderFindFunction = () => { 
+        return <Find array = {this.state.elements} name = {this.state.funcName} />    
+    }
+    
     setInputField = (event) => {
         this.setState({
             currentElement: parseInt(event.target.value),
@@ -82,6 +86,7 @@ class Menu extends Component {
                 {this.state.funcName === 'Map' ? this.renderMapFunction() : ''}
                 {this.state.funcName === 'Filter' ? this.renderFilterFunction() : ''}
                 {this.state.funcName === 'Reduce' ? this.renderReduceFunction() : ''}
+                {this.state.funcName === 'Find' ? this.renderFindFunction() : ''}
             </div>
          );
     }
